@@ -34,22 +34,23 @@ header .logo {
 .label-menu {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   color: var(--white);
-  padding: 1rem 0;
+  padding: 16px 0;
+  box-sizing: border-box;
   cursor: pointer;
 }
 .label-menu .hamburger {
-  border-top: 0.125rem solid;
-  width: 1.25rem;
+  border-top: 2px solid;
+  width: 20px;
 }
 .label-menu .hamburger::before, .label-menu .hamburger::after {
   content: " ";
   display: block;
-  width: 1.25rem;
-  height: 0.125rem;
+  width: 20px;
+  height: 2px;
   background: currentColor;
-  margin-top: 0.3125rem;
+  margin-top: 5px;
   position: relative;
   transition: 0.3s;
 }
@@ -64,7 +65,7 @@ header .logo {
 
 .menu-bar:checked ~ .label-menu .hamburger::after {
   transform: rotate(-135deg);
-  top: -0.4375rem;
+  top: -7px;
 }
 
 header .menu-bar {
@@ -80,11 +81,17 @@ header label {
   font-size: 20px;
   color: #333;
   cursor: pointer;
-  display: none;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 @media screen and (max-width: 991px) {
   header label {
-    display: initial;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    visibility: initial;
   }
 }
 

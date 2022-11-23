@@ -1,23 +1,25 @@
+
 .label-menu {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 8px;
   color: var(--white);
-  padding: 1rem 0;
+  padding: 16px 0;
+  box-sizing: border-box;
   cursor: pointer;
 
   .hamburger {
-    border-top: 0.125rem solid;
-    width: 1.25rem;
+    border-top: 2px solid;
+    width: 20px;
 
     &::before,
     &::after {
       content: " ";
       display: block;
-      width: 1.25rem;
-      height: 0.125rem;
+      width: 20px;
+      height: 2px;
       background: currentColor;
-      margin-top: 0.3125rem;
+      margin-top: 5px;
       position: relative;
       transition: 0.3s;
     }
@@ -32,5 +34,5 @@
 }
 .menu-bar:checked ~ .label-menu .hamburger::after {
   transform: rotate(-135deg);
-  top: -0.4375rem;
+  top: -7px;
 }
