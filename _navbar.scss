@@ -1,0 +1,123 @@
+header {
+  .menu-bar {
+    display: none;
+
+    @media screen and (max-width: 991px) {
+      &:checked ~ .navbar {
+        //display: initial;
+        visibility: initial;
+        height: 100vh;
+      }
+    }
+    
+  }
+
+  label {
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    display: none;
+
+    @media screen and (max-width: 991px) {
+      display: initial;
+    }
+  }
+}
+
+$component-name: "navbar";
+.#{$component-name} {
+  @media screen and (max-width: 991px) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 360px;
+    background-color: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    //display: none;
+    visibility: hidden;
+    overflow-y: hidden;
+    transition: 300ms;
+    height: 0;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      position: relative;
+      float: left;
+
+      @media screen and (max-width: 991px) {
+        width: 100%;
+      }
+
+      a {
+        font-size: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+        color: #333;
+        display: block;
+        text-decoration: none;
+
+        &:hover {
+          background-color: #333;
+          color: #fff;
+        }
+      }
+
+      ul {
+        position: absolute;
+        left: 0;
+        background-color: #fff;
+        width: 200px;
+        display: none;
+
+        @media screen and (max-width: 991px) {
+          position: relative;
+          width: 100%;
+        }
+
+        li {
+          width: 100%;
+          border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+          @media screen and (max-width: 991px) {
+            background-color: #ccc;
+          }
+
+          ul {
+            left: 200px;
+            top: 0;
+
+            @media screen and (max-width: 991px) {
+              width: 100%;
+              left: 0;
+            }
+
+            li {
+              @media screen and (max-width: 991px) {
+                background-color: #eee;
+              }
+            }
+          }
+        }
+      }
+
+      @media screen and (min-width: 992px) {
+        &:focus-within > ul,
+        &:hover > ul {
+          display: initial;
+          visibility: visible;
+        }
+      }
+
+      @media screen and (max-width: 991px) {
+        &:focus-within > ul {
+          display: initial;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
